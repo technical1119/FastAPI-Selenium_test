@@ -10,7 +10,8 @@ def createDriver() -> webdriver.Chrome:
 
     return myDriver
 
-async def getGoogleHomepage(driver: webdriver.Chrome) -> str:
+async def getGoogleHomepage():
+    driver = createDriver()
     driver.get("https://www.google.com")
     return driver.page_source
 
