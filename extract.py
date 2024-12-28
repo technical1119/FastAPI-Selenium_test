@@ -1,7 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-
 def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument("--headless")
@@ -11,7 +10,7 @@ def createDriver() -> webdriver.Chrome:
 
     return myDriver
 
-def getGoogleHomepage(driver: webdriver.Chrome) -> str:
+async def getGoogleHomepage(driver: webdriver.Chrome) -> str:
     driver.get("https://www.google.com")
     return driver.page_source
 
