@@ -33,7 +33,7 @@ app.add_middleware(
 async def get_defilama_projects_endpoint():
     try:
         # Call the scraping function with a different name
-        projects = await get_defilama_projects()  # Note: not async if using Selenium
+        projects = await getGoogleHomepage()  # Note: not async if using Selenium
         if projects is None:
             raise HTTPException(status_code=500, detail="Failed to fetch projects")
         return {"projects": projects}
